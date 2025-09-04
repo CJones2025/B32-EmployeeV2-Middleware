@@ -11,5 +11,17 @@ const employees = [
   { id: 10, name: "Gwen Grollmann" },
 ];
 
-/* WARNING: this must remain the default export in order for the tests to work! */
+function getAll() {
+  return employees;
+}
+
+function add(name) {
+  const newId =
+    employees.length > 0 ? employees[employees.length - 1].id + 1 : 1;
+  const newEmployee = { id: newId, name };
+  employees.push(newEmployee);
+  return newEmployee;
+}
+
+export { getAll, add, employees };
 export default employees;
